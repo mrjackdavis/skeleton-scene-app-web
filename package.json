@@ -4,6 +4,7 @@
   "description": "Skeleton Scene Web Application",
   "main": "index.js",
   "scripts": {
+    "postinstall": "node node_modules/bower/bin/bower install",
     "test": "gulp test"
   },
   "repository": {
