@@ -1,8 +1,9 @@
 angular.module('SceneSkeleton')
 	.controller('SceneCreateController',function($scope){
 		$scope.CreateScene = CreateScene;
+		$scope.url = 'whoa';
 	});
 
-function CreateScene(){
-	alert('yo dawg');
+function CreateScene(url){
+	alert(url);
 }
