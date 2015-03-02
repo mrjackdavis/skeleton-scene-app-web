@@ -16,7 +16,7 @@
         <!-- FONT -->
         <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
     </head>
-    <body ng-app="SkeletonScene">
+    <body ng-app="SceneSkeleton">
         <div class="container">
             <!--[if lt IE 8]>
                 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -30,10 +30,12 @@
             </div>
             <div class="row">
                 <hr/>
-                <form class="six columns offset-by-three">
-                    <input class="u-full-width" type="url" placeholder="http://www.any-old-website.com" id="emailInput">
-                    <div>OR</div>
+                <form class="six columns offset-by-three" id="sceneForm" ng-controller="SceneCreateController">
+                    <input class="u-full-width" type="url" placeholder="http://www.any-old-website.com" id="urlInput">
+                    <div>or</div>
                     <input type="file"/>
+                    <br/>
+                    <button ng-click="CreateScene()">Lets go!</button>
                 </form>
             </div>
         </div>
@@ -43,6 +45,7 @@
 
         <!-- App -->
         <script src="js/app.js"></script>
+        <script src="js/controllers/scene-create-controller.js"></script>
 
     </body>
 </html>

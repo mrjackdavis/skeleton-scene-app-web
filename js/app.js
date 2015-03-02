@@ -1,1 +1,1 @@
-angular.module('SkeletonScene',[]);
+angular.module('SceneSkeleton',[]);
