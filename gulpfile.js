@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var connect = require('gulp-connect');
 var less = require('gulp-less');
 
-gulp.task('default', function() {
+gulp.task('default',['build','start'], function() {
 
 });
 
