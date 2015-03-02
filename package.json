@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mrjackdavis/skeleton-scene-app-web",
   "devDependencies": {
-    "gulp": "^3.8.11"
+    "gulp": "^3.8.11",
+    "gulp-connect": "^2.2.0"
   }
 }
