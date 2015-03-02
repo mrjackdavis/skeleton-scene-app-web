@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mrjackdavis/skeleton-scene-app-web/issues"
   },
-  "homepage": "https://github.com/mrjackdavis/skeleton-scene-app-web"
+  "homepage": "https://github.com/mrjackdavis/skeleton-scene-app-web",
+  "devDependencies": {
+    "gulp": "^3.8.11"
+  }
 }
