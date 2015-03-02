@@ -1,0 +1,19 @@
+{
+  "name": "skeleton-scene-app-web",
+  "version": "0.0.1",
+  "description": "Skeleton Scene Web Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrjackdavis/skeleton-scene-app-web.git"
+  },
+  "author": "Jack Davis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrjackdavis/skeleton-scene-app-web/issues"
+  },
+  "homepage": "https://github.com/mrjackdavis/skeleton-scene-app-web"
+}
