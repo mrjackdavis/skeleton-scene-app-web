@@ -1,6 +1,6 @@
-<form class="six columns offset-by-three" id="sceneForm">
-    <input class="u-full-width" type="url" placeholder="http://www.any-old-website.com" id="urlInput" ng-model="url">
+<form class="six columns offset-by-three" id="sceneForm"  ng-submit="CreateScene(url);">
+    <input class="u-full-width" type="url" placeholder="http://www.any-old-website.com" id="urlInput" ng-model="url" required>
     <p><em>File upload coming soon</em></p>
-    <button ng-click="CreateScene(url);" data-ng-disabled="loading">Lets go!</button>
+    <input type="submit" data-ng-disabled="loading" value="Lets go!">
     <em ng-show="loading">Loading...</em>
 </form>

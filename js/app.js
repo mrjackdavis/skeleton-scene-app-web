@@ -1,7 +1,7 @@
 angular.module('SceneSkeleton',['ngRoute'])
 	.config(['$routeProvider',function($routeProvider){
 		$routeProvider
-			.when('/',{
+			.when('/scene/new',{
 				templateUrl: 'templates/scene/create.html',
 				controller:'SceneCreateController'
 			})
@@ -10,6 +10,6 @@ angular.module('SceneSkeleton',['ngRoute'])
 				controller:'SceneDisplayController'
 			})
 			.otherwise({
-				redirectTo:'/'
+				redirectTo:'/scene/new'
 			});
 	}]);
