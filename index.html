@@ -17,33 +17,36 @@
         <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
     </head>
     <body ng-app="SceneSkeleton">
-        <div class="container">
+        <div class="navbar container">
+            <nav>
+                <a href="/#/">Home</a>
+            </nav>
+        </div>
+        <div class="container" ng-controller="IndexPageController">
             <!--[if lt IE 8]>
                 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             <![endif]-->
-            <section class="header row">
+            <section class="header row" ng-show="showTitle">
                 <div class="six columns offset-by-three">
                     <h4>See what your data feels like.
                     </br>Get an insight into the 1's and 0's.</h4>
-                    <button class="button-primary">Give it a try!</button>
+                    <button class="button-primary" ng-click="showSceneForm = true" ng-hide="showSceneForm">Give it a try!</button>
                 </div>
-            </div>
-            <div class="row">
-                <hr/>
-                <form class="six columns offset-by-three" id="sceneForm" ng-controller="SceneCreateController">
-                    <input class="u-full-width" type="url" placeholder="http://www.any-old-website.com" id="urlInput" ng-model="url">
-                    <p><em>File upload coming soon</em></p>
-                    <button ng-click="CreateScene(url)">Lets go!</button>
-                </form>
+            </section>
+            <div class="row" ng-show="showSceneForm">
+                <hr ng-show="showSceneForm"/>
+                <div ng-view></div>
             </div>
         </div>
 
         <!-- Vendor -->
         <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
 
         <!-- App -->
         <script src="js/app.js"></script>
         <script src="js/controllers/scene-create-controller.js"></script>
+        <script src="js/controllers/index-page-controller.js"></script>
 
     </body>
 </html>
