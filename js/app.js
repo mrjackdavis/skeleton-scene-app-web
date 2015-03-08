@@ -9,7 +9,10 @@ angular.module('SceneSkeleton',['ngRoute'])
 				templateUrl:'templates/scene/display.html',
 				controller:'SceneDisplayController'
 			})
+			.when('/',{
+				templateUrl:'templates/title.html'
+			})
 			.otherwise({
-				redirectTo:'/scene/new'
+				redirectTo:'/'
 			});
 	}]);
