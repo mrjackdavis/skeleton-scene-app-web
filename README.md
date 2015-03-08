@@ -1,4 +1,4 @@
-# skeleton-scene-app-web
+# Skeleton Web App
 
 ## Deployment
 
