@@ -1,0 +1,25 @@
+{
+  "name": "skeleton-scene-app-web",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mrjackdavis/skeleton-scene-app-web",
+  "authors": [
+    "Jack Davis <mr.jackdavis@gmail.com>"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.14",
+    "Skeleton-Less": "https://github.com/whatsnewsaes/Skeleton-Less.git",
+    "angular-route": "~1.3.14"
+  }
+}
