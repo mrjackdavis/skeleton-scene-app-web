@@ -23,6 +23,6 @@ gulp.task('start', function() {
 
 gulp.task('deploy',['build'],function(){
 	aws = JSON.parse(fs.readFileSync('./aws.json'));
-	gulp.src(['./bower_components/**','./css/**','./js/**','./templates/**','./index.html','./package.json'])
+	gulp.src(['./bower_components/**','./css/**','./js/**','./templates/**','./index.html','./package.json'],{cwdbase: true})
 	    .pipe(s3(aws));
 });
