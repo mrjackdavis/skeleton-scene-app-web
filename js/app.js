@@ -5,7 +5,7 @@ angular.module('SceneSkeleton',['ngRoute','ngResource'])
 				templateUrl: 'templates/scene/create.html',
 				controller:'SceneCreateController'
 			})
-			.when('/scene/:id',{
+			.when('/scene/:sceneId',{
 				templateUrl:'templates/scene/display.html',
 				controller:'SceneDisplayController'
 			})

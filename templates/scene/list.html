@@ -5,8 +5,5 @@
 	<hr/>
 	<h5>Scene {{scene._id}}</h5>
 	<span>URL: {{scene.resource.location}}</span>
-	<h6>Processes</h6>
-	<div ng-repeat="process in scene.processes">
-		<span>{{process.status}} - <a href="{{process.result}}">See result</a></span>
-	</div>
+	<a href="/#/scene/{{scene._id}}">See more</a>
 </div>
