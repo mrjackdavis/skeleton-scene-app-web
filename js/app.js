@@ -1,4 +1,4 @@
-angular.module('SceneSkeleton',['ngRoute'])
+angular.module('SceneSkeleton',['ngRoute','ngResource'])
 	.config(['$routeProvider',function($routeProvider){
 		$routeProvider
 			.when('/scene/new',{
