@@ -9,6 +9,10 @@ angular.module('SceneSkeleton',['ngRoute','ngResource'])
 				templateUrl:'templates/scene/display.html',
 				controller:'SceneDisplayController'
 			})
+			.when('/scene/',{
+				templateUrl:'templates/scene/list.html',
+				controller:'SceneListController'
+			})
 			.when('/',{
 				templateUrl:'templates/title.html'
 			})
