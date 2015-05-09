@@ -1,4 +1,6 @@
 angular.module('SceneSkeleton')
-	.controller('SceneDisplayController',function($scope){
-		$scope.sceneSrc = 'http://www.cianellistudios.com/images/abstract-art/abstract-art-mother-earth.jpg';
+	.controller('SceneDisplayController',function($scope,$routeParams,Scene){
+		var scene = Scene.get({id:$routeParams.sceneId,dateCreated:$routeParams.dateCreated},function(){
+			$scope.scene = scene;
+		});
 	});

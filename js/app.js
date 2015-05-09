@@ -1,13 +1,17 @@
-angular.module('SceneSkeleton',['ngRoute'])
+angular.module('SceneSkeleton',['ngRoute','ngResource'])
 	.config(['$routeProvider',function($routeProvider){
 		$routeProvider
 			.when('/scene/new',{
 				templateUrl: 'templates/scene/create.html',
 				controller:'SceneCreateController'
 			})
-			.when('/scene/:id',{
+			.when('/scene/:sceneId/:dateCreated',{
 				templateUrl:'templates/scene/display.html',
 				controller:'SceneDisplayController'
+			})
+			.when('/scene/',{
+				templateUrl:'templates/scene/list.html',
+				controller:'SceneListController'
 			})
 			.when('/',{
 				templateUrl:'templates/title.html'

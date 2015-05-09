@@ -1,0 +1,12 @@
+<h1>Scenes</h1>
+<span>Number of scenes: {{scenes.length}}</span>
+
+<div ng-repeat="scene in scenes">
+	<hr/>
+	<h5>Scene {{scene._id}}</h5>
+	<span>URL: {{scene.resource.location}}</span>
+	<br/>
+	Processes: {{scene.processes.length}}
+	<br/>
+	<a href="/#/scene/{{scene.sceneID}}/{{scene.dateCreated}}">See more</a>
+</div>

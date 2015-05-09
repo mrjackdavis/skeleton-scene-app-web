@@ -21,7 +21,8 @@
         <div class="navbar container" ng-show="showNavbar">
             <nav>
                 <a href="/#/">Home</a>
-                <a href="/#/scene/new">Create a scene</a>
+                <a href="/#/scene/new">New Scene</a>
+                <a href="/#/scene">All Scenes</a>
             </nav>
         </div>
         <div class="container">
@@ -36,12 +37,19 @@
         <!-- Vendor -->
         <script src="bower_components/angular/angular.min.js"></script>
         <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.min.js"></script>
 
         <!-- App -->
         <script src="js/app.js"></script>
+
+        <!-- App Controllers -->
         <script src="js/controllers/scene-create-controller.js"></script>
         <script src="js/controllers/scene-display-controller.js"></script>
+        <script src="js/controllers/scene-list-controller.js"></script>
         <script src="js/controllers/index-page-controller.js"></script>
+
+        <!-- App Services -->
+        <script src="js/services/skl-api-resource.js"></script>
 
     </body>
 </html>
