@@ -1,10 +1,10 @@
 <h2>Scene {{scene._id}}</h2>
-<span>{{scene.resource.location}}</span>
+<span>{{scene.resource.type}} : {{scene.resource.location}}</span> - <span>{{scene.status}}</span>
 
-<h5>Processes</h5>
-<div ng-repeat="process in scene.processes">
-	<span>{{process.status}}</span>
+<div ng-repeat="process in scene.completeProcesses">
 	<img ng-src="{{process.result}}" class="u-max-full-width" /> 
 </div>
+
+<span ng-if="scene.runningProcesses.length >= 1">{{scene.runningProcesses.length}} in progress</span>
 
 <img ng-src="{{sceneSrc}}" class="u-max-full-width" />

@@ -1,6 +1,6 @@
 <h2>Scenes <a href="/#/scene/new" class="button">New</a></h2>
 
-<div ng-if="{{scenes.length > 0}}">No scenes found :(</div>
+<div ng-if="scenes.length <= 0">No scenes found :(</div>
 
 <div ng-repeat="scene in scenes | orderBy: '-dateCreated'">
 	<hr/>
