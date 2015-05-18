@@ -5,9 +5,7 @@ angular.module('SceneSkeleton')
 			$scope.rows = [];
 			$scope.totalScenes = data.length;
 
-			var scenes =  data.sort(function(a,b){
-				return a.createdAt < b.createdAt;
-			});
+			var scenes =  data;
 
 			var currentRow = [];
 
