@@ -1,15 +1,14 @@
 angular.module('SceneSkeleton')
-	.controller('SceneCreateController',function($scope,$location,$timeout,Scene){
+	.controller('SceneCreateController',function($scope,$location,$timeout,SceneRequests,Generators){
 		$scope.url = '';
+		$scope.Generators = Generators.query();
 
 		$scope.CreateScene = function CreateScene(url){
 			$scope.loading = true;
 
-			Scene.save({
-				resource:{
-					type:"url",
-					location:$scope.url
-				}
+			SceneRequests.save({
+				resourceType:"URL",
+				resourceURI:$scope.url
 			}).$promise.then(function(data){
 				$location.path('/scene');
 			});
