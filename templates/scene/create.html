@@ -4,9 +4,7 @@
 			<input class="u-full-width" type="url" placeholder="http://www.any-old-website.com" id="urlInput" ng-model="url" required>
 		</div>
 		<div class="six columns">
-			<select class="u-full-width">
-				<option ng-repeat='generator in Generators'>{{generator}}</option>
-			</select>
+			<select class="u-full-width" ng-options="generator for generator in Generators" ng-model='SelectedGenerator'></select>
 		</div>
 	</div>
 	<p><em>File upload coming soon</em></p>
