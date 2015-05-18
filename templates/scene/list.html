@@ -7,12 +7,9 @@
 	<div ng-repeat="scene in row" class="four columns">
 		<hr/>
 		<a href="/#/scene/{{scene.sceneID}}/{{scene.dateCreated}}">
-			<img ng-if="scene.completeProcesses.length >= 1" ng-src="{{scene.completeProcesses[0].result}}" class="u-max-full-width" />
+			<img ng-src="{{scene.resultURI}}" class="u-max-full-width" />
 			<span>
-				Snowflake - {{scene.dateCreated}}
-			</span>
-			<span ng-if="scene.status !== 'Complete'">
-				{{scene.status}}
+				{{scene.generatorName}} - {{scene.completedAt}}
 			</span>
 		</a>
 	</div>

@@ -1,12 +1,12 @@
 angular.module('SceneSkeleton')
-	.controller('SceneListController',function($scope,Scene){
+	.controller('SceneListController',function($scope,Scenes){
 		$scope.scenes = [];
-		Scene.query(function(data) {
+		Scenes.query(function(data) {
 			$scope.rows = [];
 			$scope.totalScenes = data.length;
 
 			var scenes =  data.sort(function(a,b){
-				return a.dateCreated < b.dateCreated;
+				return a.createdAt < b.createdAt;
 			});
 
 			var currentRow = [];
