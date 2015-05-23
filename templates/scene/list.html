@@ -6,7 +6,7 @@
 <div ng-repeat="row in rows" class="row">
 	<div ng-repeat="scene in row" class="four columns">
 		<hr/>
-		<a href="/#/scene/{{scene.sceneID}}/{{scene.dateCreated}}">
+		<a href="/#/scene/{{scene.sceneID}}/{{scene.completedAt}}">
 			<img ng-src="{{scene.resultURI}}" class="u-max-full-width" />
 			<span>
 				{{scene.generatorName}} - {{scene.completedAt}}
