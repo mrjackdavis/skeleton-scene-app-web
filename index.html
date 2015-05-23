@@ -19,11 +19,7 @@
     </head>
     <body ng-app="SceneSkeleton" ng-controller="IndexPageController">
         <div class="navbar container" ng-show="showNavbar">
-            <nav>
-                <a href="/#/">Home</a>
-                <a href="/#/scene/new">New Scene</a>
-                <a href="/#/scene">All Scenes</a>
-            </nav>
+            <h1 class='brand'>Skeleton Scene</h1>
         </div>
         <div class="container">
             <!--[if lt IE 8]>
@@ -33,6 +29,10 @@
                 <div ng-view></div>
             </div>
         </div>
+        <section class="center pad-top-md container">
+                <hr/>
+                <a href="https://github.com/mrjackdavis/skeleton-scene-docs" target="_blank">GitHub Project</a>
+        </section>
 
         <!-- Vendor -->
         <script src="bower_components/angular/angular.min.js"></script>

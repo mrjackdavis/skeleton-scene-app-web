@@ -1,12 +1,16 @@
-<h1>Scenes</h1>
-<span>Number of scenes: {{scenes.length}}</span>
+<h2>Scenes <a href="/#/scene/new" class="button">New</a></h2>
 
-<div ng-repeat="scene in scenes">
-	<hr/>
-	<h5>Scene {{scene._id}}</h5>
-	<span>URL: {{scene.resource.location}}</span>
-	<br/>
-	Processes: {{scene.processes.length}}
-	<br/>
-	<a href="/#/scene/{{scene.sceneID}}/{{scene.dateCreated}}">See more</a>
+<div ng-if="totalScenes <= 0">No scenes found :(</div>
+{{totalScenes}}
+
+<div ng-repeat="row in rows" class="row">
+	<div ng-repeat="scene in row" class="four columns">
+		<hr/>
+		<a href="/#/scene/{{scene.sceneID}}/{{scene.completedAt}}">
+			<img ng-src="{{scene.resultURI}}" class="u-max-full-width" />
+			<span>
+				{{scene.generatorName}} - {{scene.completedAt}}
+			</span>
+		</a>
+	</div>
 </div>

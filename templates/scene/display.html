@@ -1,10 +1,4 @@
-<h1>Scene {{scene._id}}</h1>
-<span>{{scene.resource.location}}</span>
+<h2>Scene {{scene._id}}</h2>
+<span>{{scene.resourceType}} : {{scene.resourceURI}}</span>
 
-<h5>Processes</h5>
-<div ng-repeat="process in scene.processes">
-	<span>{{process.status}}</span>
-	<img ng-src="{{process.result}}" class="u-max-full-width" /> 
-</div>
-
-<img ng-src="{{sceneSrc}}" class="u-max-full-width" />
+<img ng-src="{{scene.resultURI}}" class="u-max-full-width" />
