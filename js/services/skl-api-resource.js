@@ -1,4 +1,4 @@
-var SKL_API_URL = 'http://skl-api-426627428.ap-southeast-2.elb.amazonaws.com/v0-2';
+var SKL_API_URL = 'http://api.toast-it.io/v0-2';
 // var SKL_API_URL = 'http://dockervm:8080/v0-2';
 
 angular.module('SceneSkeleton')
