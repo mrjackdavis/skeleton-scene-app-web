@@ -1,11 +1,11 @@
-<h2>Scenes <a href="/#/scene/new" class="button">New</a></h2>
+<h2>Bread bin <a href="/#/scene/new" class="button">New</a></h2>
 
 <div ng-if="totalScenes <= 0">No scenes yet. <a href="/#/scene/new">Go make one</a></div>
 
 <div>
-	<span ng-if="numPending >= 1">{{numPending}} Pending</span>
-	<br/>
-	<span ng-if="numInProgress >= 1">{{numInProgress}} In Progress</span>
+	<span ng-if="numPending >= 1">{{numPending}} Waiting to toast</span>
+	<br ng-if="numInProgress >= 1 && numPending >= 1"/>
+	<span ng-if="numInProgress >= 1">{{numInProgress}} Toasting</span>
 </div>
 <div ng-repeat="row in rows" class="row">
 	<div ng-repeat="scene in row" class="four columns">

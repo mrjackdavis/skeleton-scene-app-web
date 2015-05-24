@@ -1,13 +1,22 @@
-<form class="six columns offset-by-three" id="sceneForm"  ng-submit="CreateScene(url);">
+<h2>The toaster</h2>
+<form class="ten columns offset-by-one" id="sceneForm"  ng-submit="CreateScene(url);">
 	<div class="row">
-		<div class="six columns">
+		<div class="four columns">
+			<label>Choose your bread</label>
+		</div>
+		<div class="eight columns">
 			<input class="u-full-width" type="url" placeholder="http://www.any-old-website.com" id="urlInput" ng-model="url" required>
 		</div>
-		<div class="six columns">
+	</div>
+	<div class="row">
+		<div class="four columns">
+			<label>Select your toaster</label>
+		</div>
+		<div class="eight columns">
 			<select class="u-full-width" ng-options="generator for generator in Generators" ng-model='SelectedGenerator'></select>
 		</div>
 	</div>
 	<p><em>File upload coming soon</em></p>
-	<input type="submit" data-ng-disabled="loading" value="Lets go!">
-	<em ng-show="loading">Loading...</em>
+	<input ng-if="!loading" type="submit" value="Toast IT!">
+	<input ng-if="loading" type="submit" disabled value="Getting bread...">
 </form>
