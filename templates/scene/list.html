@@ -1,16 +1,21 @@
 <h2>Scenes <a href="/#/scene/new" class="button">New</a></h2>
 
-<div ng-if="totalScenes <= 0">No scenes found :(</div>
-{{totalScenes}}
+<div ng-if="totalScenes <= 0">No scenes yet. <a href="/#/scene/new">Go make one</a></div>
 
+<div>
+	<span ng-if="numPending >= 1">{{numPending}} Pending</span>
+	<br/>
+	<span ng-if="numInProgress >= 1">{{numInProgress}} In Progress</span>
+</div>
 <div ng-repeat="row in rows" class="row">
 	<div ng-repeat="scene in row" class="four columns">
 		<hr/>
 		<a href="/#/scene/{{scene.sceneID}}/{{scene.completedAt}}">
 			<img ng-src="{{scene.thumbnailURI}}" class="u-max-full-width" />
-			<span>
-				{{scene.generatorName}} - {{scene.completedAt}}
-			</span>
+			<h6>{{scene.resourceURI}}</h6>
+			<small>
+				{{scene.generatorName}}
+			</small>
 		</a>
 	</div>
 </div>

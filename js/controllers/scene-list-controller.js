@@ -1,5 +1,5 @@
 angular.module('SceneSkeleton')
-	.controller('SceneListController',function($scope,Scenes){
+	.controller('SceneListController',function($scope,Scenes,SceneRequests){
 		$scope.scenes = [];
 		Scenes.query(function(data) {
 			$scope.rows = [];
@@ -19,5 +19,14 @@ angular.module('SceneSkeleton')
 			if(currentRow.length > 0){
 				$scope.rows.push(currentRow);
 			}
+		});
+		SceneRequests.query(function(data){
+			$scope.numInProgress = data.filter(function(request){
+				return request.status === 'IN_PROGRESS';
+			}).length;
+
+			$scope.numPending = data.filter(function(request){
+				return request.status === 'PENDING';
+			}).length;
 		});
 	});
