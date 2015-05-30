@@ -54,5 +54,6 @@ angular.module('SceneSkeleton')
 	});
 
 function NormaliseScene(scene){
+	scene.completedAtDate = new Date(scene.completedAt);
 	return scene;
 }
