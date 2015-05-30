@@ -1,12 +1,14 @@
 angular.module('SceneSkeleton')
 	.controller('SceneListController',function($scope,$interval,Scenes,SceneRequests){
+		var FIRST_LOAD_SIZE = 9;
+
 		$scope.scenes = [];
 		$scope.rows = [];
 		$scope.numInProgress = 0;
 		$scope.numPending = 0;
 
 		// Get initial batch
-		Scenes.query({size:15,page:0},function(data) {
+		Scenes.query({size:FIRST_LOAD_SIZE,page:0},function(data) {
 			$scope.scenes = data;
 			updateRows();
 		});
@@ -26,7 +28,7 @@ angular.module('SceneSkeleton')
 		});
 
 		$scope.loadMore = function(){
-			var params = {size:5,page:Math.ceil($scope.scenes.length/5)};
+			var params = {size:6,page:Math.ceil($scope.scenes.length/5)};
 			console.log(params);
 			Scenes.query(params,function(data) {
 				console.log(data.length);
@@ -40,7 +42,7 @@ angular.module('SceneSkeleton')
 
 
 		function loadNew(){
-			Scenes.query({size:15,page:0},function(data) {
+			Scenes.query({size:FIRST_LOAD_SIZE,page:0},function(data) {
 				data.forEach(function(newScene){
 					var matchingScenes = $scope.scenes.filter(function(scene){
 						return scene.sceneID === newScene.sceneID;

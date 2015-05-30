@@ -17,6 +17,7 @@
 		</div>
 	</div>
 	<p><em>File upload coming soon</em></p>
-	<input ng-if="!loading" type="submit" value="Toast IT!">
-	<input ng-if="loading" type="submit" disabled value="Getting bread...">
+	<a href="#/scene" class="button">Cancel</a>
+	<input ng-if="!loading" type="submit" class="button-primary" value="Toast IT!">
+	<input ng-if="loading" type="submit" class="button-primary" disabled value="Getting bread...">
 </form>
