@@ -34,5 +34,11 @@ angular.module('SceneSkeleton')
 		
 		updateSceneList();
 
-		$interval(updateSceneList, 3000);
+		var interval = $interval(updateSceneList, 54000);
+
+		$scope.$on("$destroy", function() {
+			if (interval) {
+				$interval.cancel(interval);
+			}
+		});
 	});

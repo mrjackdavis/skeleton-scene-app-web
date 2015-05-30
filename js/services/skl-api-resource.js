@@ -14,7 +14,6 @@ angular.module('SceneSkeleton')
 				isArray: true,
 				transformResponse:function(data,header){
 					var scenes = angular.fromJson(data);
-					console.log(scenes);
 					return scenes.map(NormaliseScene);
 				}
 			}
@@ -35,7 +34,6 @@ angular.module('SceneSkeleton')
 				isArray: true,
 				transformResponse:function(data,header){
 					var scenes = angular.fromJson(data);
-					console.log(scenes);
 					return scenes.map(NormaliseScene);
 				}
 			}
