@@ -15,11 +15,6 @@ angular.module('SceneSkeleton')
 			}).$promise.then(function(data){
 				$location.path('/scene');
 			});
-			
-			// $timeout(function(){
-			// 	console.log('updating location to /#/scene/1234');
-			// 	$location.path('/scene/1234');
-			// },2000);
 		}
 	});
 
