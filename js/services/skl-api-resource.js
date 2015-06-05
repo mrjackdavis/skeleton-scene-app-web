@@ -46,7 +46,8 @@ angular.module('SceneSkeleton')
 		var service = {
 			query:function(){
 				return [
-					"Snowflake"
+					"Snowflake",
+					"Real Toast"
 				];
 			}
 		}
