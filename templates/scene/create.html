@@ -1,5 +1,4 @@
-<h2>The toaster</h2>
-<form class="ten columns offset-by-one" id="sceneForm"  ng-submit="CreateScene(url);">
+<form class="ten columns offset-by-one" id="sceneForm"  ng-submit="CreateScene(url);" style="padding-top:40px;">
 	<div class="row">
 		<div class="four columns">
 			<label>Choose your bread</label>
@@ -16,7 +15,9 @@
 			<select class="u-full-width" ng-options="generator for generator in Generators" ng-model='SelectedGenerator'></select>
 		</div>
 	</div>
-	<a href="#/scene" class="button">Cancel</a>
-	<input ng-if="!loading" type="submit" class="button-primary" value="Toast IT!">
-	<input ng-if="loading" type="submit" class="button-primary" disabled value="Getting bread...">
+	<div style="padding-top:40px;">
+		<a href="#/scene" class="button">Cancel</a>
+		<input ng-if="!loading" type="submit" class="button-primary" value="Toast IT!">
+		<input ng-if="loading" type="submit" class="button-primary" disabled value="Getting bread...">
+	</div>
 </form>
