@@ -1,4 +1,17 @@
-<h2>Bread</h2>
-<span>{{scene.resourceType}} : {{scene.resourceURI}}</span>
-
-<img ng-src="{{scene.resultURI}}" class="u-max-full-width" />
+<a href="/#/scene">Bread bin</a> > {{scene.generatorName}}
+<div class="row">
+	<div class="eight columns">
+		<img ng-src="{{scene.resultURI}}" class="u-max-full-width" />
+	</div>
+	<div class="four columns">
+		<!-- <h4>Info</h4> -->
+		<p>
+			Toasted {{timeSinceComplete}}
+			<br/>
+			Completed {{timeToGenerate}}
+		</p>
+		<label>Generator</label><span>{{scene.generatorName}}</span>
+		<label>Type</label><span>{{scene.resourceType}}</span>
+		<label>URI</label><span>{{scene.resourceURI}}</span>
+	</div>
+</div>
