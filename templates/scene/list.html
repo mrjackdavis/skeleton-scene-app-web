@@ -1,18 +1,35 @@
-<h2>Bread bin <a href="/#/scene/new" class="button">New</a></h2>
-
-<div ng-if="scenes.length <= 0">No scenes yet. <a href="/#/scene/new">Go make one</a></div>
-
-<div>
-	<span ng-if="numPending >= 1">{{numPending}} Waiting to toast</span>
-	<br ng-if="numInProgress >= 1 && numPending >= 1"/>
-	<span ng-if="numInProgress >= 1">{{numInProgress}} Toasting</span>
+<div class="row" style="padding-top:40px;padding-bottom:40px;">
+	<div class="four columns" style="text-align:right;">
+		<div>
+			<label>Current Toast</label>
+			<p>
+			<small>{{numPending}} Waiting to toast</small>
+			<br/>
+			<small>{{numInProgress}} Toasting</small>
+			</p>
+		</div>
+	</div>
+	<div class="eight columns" style="text-align:center;">
+		<a href="/#/scene/new" class="button">New</a>
+	</div>
 </div>
-<div ng-repeat="row in rows" class="row">
-	<div ng-repeat="scene in row" class="four columns">
-		<hr/>
+
+<div ng-repeat="scene in scenes" class="row" style="padding-top:40px;padding-bottom:40px;">
+
+	<div class="four columns" style="text-align:right;">
+		<p>
+			<label>{{scene.generatorName}}</label>
+			<small>{{scene.timeSinceComplete}}</small>
+			<br/>
+			<small>{{scene.resourceURI}}</small>
+		</p>
+	</div>
+	<div class="eight columns" style="text-align:center;">
 		<a href="/#/scene/{{scene.sceneID}}/{{scene.completedAt}}">
-			<img ng-src="{{scene.thumbnailURI}}" class="u-max-full-width" />
+			<img ng-src="{{scene.thumbnailURI}}" class="u-max-full-width" style="max-width:300px;"/>
 		</a>
 	</div>
 </div>
-<button ng-click="loadMore()">More</button>
+<div style="text-align:center;padding-top:60px">
+	<button ng-click="loadMore()">More</button>
+</div>

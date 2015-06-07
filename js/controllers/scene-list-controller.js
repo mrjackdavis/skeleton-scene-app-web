@@ -3,14 +3,12 @@ angular.module('SceneSkeleton')
 		var FIRST_LOAD_SIZE = 9;
 
 		$scope.scenes = [];
-		$scope.rows = [];
 		$scope.numInProgress = 0;
 		$scope.numPending = 0;
 
 		// Get initial batch
 		Scenes.query({size:FIRST_LOAD_SIZE,page:0},function(data) {
 			$scope.scenes = data;
-			updateRows();
 		});
 		updateToastingStatus();
 
@@ -35,7 +33,6 @@ angular.module('SceneSkeleton')
 				data.forEach(function(newScene){
 					$scope.scenes.push(newScene);
 				});
-				updateRows();
 			});
 		}
 
@@ -51,24 +48,7 @@ angular.module('SceneSkeleton')
 						$scope.scenes.unshift(newScene);
 					}
 				});
-				updateRows();
 			});
-		}
-
-		function updateRows(){
-			$scope.rows = [];
-			var currentRow = [];
-
-			$scope.scenes.forEach(function(scene){
-				if(currentRow.length >= 3){
-					$scope.rows.push(currentRow);
-					currentRow = [];
-				}
-				currentRow.push(scene);
-			});
-			if(currentRow.length > 0){
-				$scope.rows.push(currentRow);
-			}
 		}
 
 		function updateToastingStatus(){

@@ -24,19 +24,7 @@ angular.module('SceneSkeleton')
 angular.module('SceneSkeleton')
 	.factory("SceneRequests", function($resource) {
 		var service = $resource(SKL_API_URL+"/scene-requests/:id/:createdAt",{},{
-			get:{
-				transformResponse:function(data,header){
-					var scene = JSON.parse(data);
-					return NormaliseScene(scene);
-				}
-			},
-			query:{
-				isArray: true,
-				transformResponse:function(data,header){
-					var scenes = angular.fromJson(data);
-					return scenes.map(NormaliseScene);
-				}
-			}
+			
 		});
 		return service;
 	});
@@ -56,5 +44,11 @@ angular.module('SceneSkeleton')
 
 function NormaliseScene(scene){
 	scene.completedAtDate = new Date(scene.completedAt);
+
+	var completeAtMoment = moment(scene.completedAt,'x');
+	var requestedAtMoment = moment(scene.requestedAt,'x');
+
+	scene.timeSinceComplete = completeAtMoment.fromNow();
+	scene.timeToGenerate = requestedAtMoment.to(completeAtMoment);
 	return scene;
 }
